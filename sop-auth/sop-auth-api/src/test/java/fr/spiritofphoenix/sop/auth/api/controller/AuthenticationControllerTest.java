@@ -11,8 +11,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class AuthenticationControllerTest extends AbstractControllerTest {
 	
-	private static final String AUTHENTICATION_ROUTE = "/auth/signin";
-	private static final String SIGNOUT_ROUTE = "/auth/user/1/signout";
+	private static final String AUTHENTICATION_ROUTE = "/auth/user/signin";
+	private static final String SIGNOUT_ROUTE = "/auth/user/4/signout";
 
 	@Test
 	public void testSignInUserSuccess() throws Exception {
