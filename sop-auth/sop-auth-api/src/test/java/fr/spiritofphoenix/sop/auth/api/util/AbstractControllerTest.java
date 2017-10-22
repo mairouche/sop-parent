@@ -19,6 +19,8 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"classpath:/applicationContext.xml", "file:src/main/webapp/WEB-INF/spring/applicationServlet.xml"})
 @WebAppConfiguration
@@ -27,6 +29,8 @@ public abstract class AbstractControllerTest {
     private static final String JSON_CONTENT_TYPE = "application/json";
     protected static final String HTTP_POST_METHOD = "POST";
     protected static final String HTTP_GET_METHOD = "GET";
+    
+    protected ObjectMapper jsonMapper = new ObjectMapper();
 
     @Autowired
     protected RequestMappingHandlerAdapter handlerAdapter;

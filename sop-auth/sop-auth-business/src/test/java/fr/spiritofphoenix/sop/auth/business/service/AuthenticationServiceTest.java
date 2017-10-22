@@ -1,5 +1,6 @@
 package fr.spiritofphoenix.sop.auth.business.service;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
@@ -25,13 +26,23 @@ public class AuthenticationServiceTest extends AbstractBusinessTest {
 	}
 	
 	@Test
-	public void testRecoverPassword() {
-		assertTrue(authenticationService.recoverPassword("recoverPassUserEmail@sop.fr", "recoverPass", "newPass"));
+	public void testchangePassword() {
+		assertTrue(authenticationService.changePassword("recoverPassUserEmail@sop.fr", "recoverPass", "newPass"));
 	}
 	
 	@Test
 	public void testIsAuthentified() {
 		assertTrue(authenticationService.isAuthenticated(1L, "token1"));
+	}
+	
+	@Test
+	public void testRecoverPasswordSuccess() {
+		assertTrue(authenticationService.recoverPassword("testUserEmail@sop.fr"));
+	}
+	
+	@Test
+	public void testRecoverPasswordFailure() {
+		assertFalse(authenticationService.recoverPassword("testUser"));
 	}
 
 }

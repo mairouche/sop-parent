@@ -47,7 +47,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 	}
 
 	@Override
-	public boolean recoverPassword(String email, String oldPassword, String newPassword) {
+	public boolean changePassword(String email, String oldPassword, String newPassword) {
 		User user = userRepository.findByEmail(email);
 		if(isUserAuthenticable(oldPassword, user)) {
 			user.setPassword(newPassword);
@@ -59,6 +59,15 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 	@Override
 	public boolean isAuthenticated(long userId, String token) {
 		return userRepository.findOne(userId).getToken().equals(token);
+	}
+	
+	@Override
+	public boolean recoverPassword(String email) {
+		if(userRepository.findByEmail(email) != null) {
+			// TODO : Send email
+			return true;
+		}
+		return false;
 	}
 	
 	/**

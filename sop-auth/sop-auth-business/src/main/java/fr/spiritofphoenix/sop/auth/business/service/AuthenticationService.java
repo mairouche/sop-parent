@@ -31,7 +31,7 @@ public interface AuthenticationService {
 	 * @param newPassword
 	 * @return
 	 */
-	boolean recoverPassword(String email, String oldPassword, String newPassword);
+	boolean changePassword(String email, String oldPassword, String newPassword);
 	
 	/**
 	 * Check if the user is authenticated
@@ -40,4 +40,11 @@ public interface AuthenticationService {
 	 * @return
 	 */
 	boolean isAuthenticated(long userId, String token);
+
+	/**
+	 * Send a mail for changing password if the email is found
+	 * @param email
+	 * @return
+	 */
+	boolean recoverPassword(String email);
 }

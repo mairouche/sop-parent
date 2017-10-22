@@ -15,6 +15,8 @@ import fr.spiritofphoenix.sop.auth.api.form.CredentialForm;
 import fr.spiritofphoenix.sop.auth.api.vo.UserVO;
 import fr.spiritofphoenix.sop.auth.business.bo.UserBO;
 import fr.spiritofphoenix.sop.auth.business.service.AuthenticationService;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 
 /**
  * Authentication Controller
@@ -37,7 +39,10 @@ public class AuthenticationController {
 	 * @return
 	 */
 	@PostMapping(value="/user/signin")
-	public ResponseEntity<?> signInUser(@RequestBody CredentialForm credentials) {
+	@ApiOperation(value = "Sign in User", notes = "Signin a user by email/password generating a token")
+	public ResponseEntity<?> signInUser(
+			@ApiParam(value = "User's authentication information", required = true) 
+			@RequestBody CredentialForm credentials) {
 		UserBO user = authenticationService.signIn(credentials.getEmail(), credentials.getPassword());
 		if(user != null && authenticationService.isAuthenticated(user.getId(), user.getToken())) {
 			return new ResponseEntity<UserVO>(mapper.map(user, UserVO.class), HttpStatus.OK);
@@ -51,8 +56,26 @@ public class AuthenticationController {
 	 * @return
 	 */
 	@GetMapping(value="/user/{userId}/signout")
-	public ResponseEntity<String> signOutUser(@PathVariable long userId) {
+	@ApiOperation(value = "Sign out User", notes = "Sign out a registred user")
+	public ResponseEntity<String> signOutUser(
+			@ApiParam(value = "User unique ID", required = true)
+			@PathVariable long userId) {
 		authenticationService.signOut(userId);
 		return new ResponseEntity<String>("Logged out", HttpStatus.OK);
+	}
+	
+	/**
+	 * Launch password recovery
+	 * @return
+	 */
+	@PostMapping(value="/user/recover")
+	@ApiOperation(value = "Recover password", notes = "Recover user's lost password")
+	public ResponseEntity<String> recoverPassword(
+			@ApiParam(value = "User's credentials", required = true)
+			@RequestBody CredentialForm credentials) {
+		if(authenticationService.recoverPassword(credentials.getEmail())) {
+			return new ResponseEntity<String>("Password recovery mail sent", HttpStatus.OK);
+		}
+		return new ResponseEntity<String>("Email not found", HttpStatus.NOT_FOUND);
 	}
 }

@@ -3858,3 +3858,83 @@ Caused by: org.hibernate.LazyInitializationException: could not initialize proxy
 2017-10-22 15:58:25 INFO  SchemaExport:406 - HHH000230: Schema export complete
 2017-10-22 15:58:25 INFO  BoneCP:159 - Shutting down connection pool...
 2017-10-22 15:58:25 INFO  BoneCP:188 - Connection pool has been shutdown.
+2017-10-22 18:08:29 INFO  DefaultTestContextBootstrapper:260 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2017-10-22 18:08:29 INFO  DefaultTestContextBootstrapper:209 - Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2017-10-22 18:08:29 INFO  DefaultTestContextBootstrapper:187 - Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7c16905e, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@2a2d45ba, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2a5ca609, org.springframework.test.context.transaction.TransactionalTestExecutionListener@20e2cbe0, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@68be2bc2]
+2017-10-22 18:08:29 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [applicationContext.xml]
+2017-10-22 18:08:29 INFO  GenericApplicationContext:581 - Refreshing org.springframework.context.support.GenericApplicationContext@6fd02e5: startup date [Sun Oct 22 18:08:29 CEST 2017]; root of context hierarchy
+2017-10-22 18:08:30 WARN  BoneCPConfig:618 - releaseHelperThreads has been deprecated -- it tends to slow down your application more.
+2017-10-22 18:08:30 INFO  LocalContainerEntityManagerFactoryBean:334 - Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-10-22 18:08:30 INFO  LogHelper:46 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-10-22 18:08:30 INFO  Version:54 - HHH000412: Hibernate Core {4.3.10.Final}
+2017-10-22 18:08:30 INFO  Environment:224 - HHH000205: Loaded properties from resource hibernate.properties: {hibernate.bytecode.use_reflection_optimizer=false, hibernate.hbm2ddl.import_files=import.sql, hibernate.format_sql=false, hibernate.hbm2ddl.auto=create-drop}
+2017-10-22 18:08:30 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2017-10-22 18:08:30 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-10-22 18:08:30 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+2017-10-22 18:08:30 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2017-10-22 18:08:31 INFO  SchemaExport:344 - HHH000227: Running hbm2ddl schema export
+2017-10-22 18:08:31 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table TA_GROUPS_AUTHORIZATIONS drop constraint FK_hhxac6hejftnop6lnpx5r52pb
+2017-10-22 18:08:31 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.TA_GROUPS_AUTHORIZATIONS
+2017-10-22 18:08:31 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table TA_GROUPS_AUTHORIZATIONS drop constraint FK_p42m1nf5tj4dyf7ykhtemg50f
+2017-10-22 18:08:31 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.TA_GROUPS_AUTHORIZATIONS
+2017-10-22 18:08:31 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table TA_USERS drop constraint FK_521wxhf2b1y3h8vk1iibr89a4
+2017-10-22 18:08:31 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.TA_USERS
+2017-10-22 18:08:31 INFO  SchemaExport:406 - HHH000230: Schema export complete
+2017-10-22 18:08:31 INFO  GlobalSettings:113 - Trying to find Dozer configuration file: dozer.properties
+2017-10-22 18:08:31 WARN  GlobalSettings:118 - Dozer configuration file not found: dozer.properties.  Using defaults for all Dozer global properties.
+2017-10-22 18:08:31 INFO  DozerInitializer:75 - Initializing Dozer. Version: 5.5.0, Thread Name: main
+2017-10-22 18:08:31 INFO  JMXPlatformImpl:66 - Dozer JMX MBean [org.dozer.jmx:type=DozerStatisticsController] auto registered with the Platform MBean Server
+2017-10-22 18:08:31 INFO  JMXPlatformImpl:66 - Dozer JMX MBean [org.dozer.jmx:type=DozerAdminController] auto registered with the Platform MBean Server
+2017-10-22 18:08:31 INFO  DozerBeanMapper:175 - Initializing a new instance of dozer bean mapper.
+2017-10-22 18:08:31 INFO  DozerBeanMapper:222 - Using the following xml files to load custom mappings for the bean mapper instance: [dozer/dozer-business-mapping.xml]
+2017-10-22 18:08:31 INFO  DozerBeanMapper:224 - Trying to find xml mapping file: dozer/dozer-business-mapping.xml
+2017-10-22 18:08:31 INFO  DozerBeanMapper:226 - Using URL [file:/D:/Users/Meidi/Git/sop-parent/sop-auth/sop-auth-business/target/classes/dozer/dozer-business-mapping.xml] to load custom xml mappings
+2017-10-22 18:08:31 INFO  DozerBeanMapper:228 - Successfully loaded custom xml mappings from URL: [file:/D:/Users/Meidi/Git/sop-parent/sop-auth/sop-auth-business/target/classes/dozer/dozer-business-mapping.xml]
+2017-10-22 18:08:31 INFO  GenericApplicationContext:982 - Closing org.springframework.context.support.GenericApplicationContext@6fd02e5: startup date [Sun Oct 22 18:08:29 CEST 2017]; root of context hierarchy
+2017-10-22 18:08:31 INFO  LocalContainerEntityManagerFactoryBean:462 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2017-10-22 18:08:31 INFO  SchemaExport:344 - HHH000227: Running hbm2ddl schema export
+2017-10-22 18:08:31 INFO  SchemaExport:406 - HHH000230: Schema export complete
+2017-10-22 18:08:31 INFO  BoneCP:159 - Shutting down connection pool...
+2017-10-22 18:08:31 INFO  BoneCP:188 - Connection pool has been shutdown.
+2017-10-22 18:22:02 INFO  DefaultTestContextBootstrapper:260 - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2017-10-22 18:22:02 INFO  DefaultTestContextBootstrapper:209 - Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+2017-10-22 18:22:02 INFO  DefaultTestContextBootstrapper:187 - Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7c16905e, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@2a2d45ba, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2a5ca609, org.springframework.test.context.transaction.TransactionalTestExecutionListener@20e2cbe0, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@68be2bc2]
+2017-10-22 18:22:02 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [applicationContext.xml]
+2017-10-22 18:22:02 INFO  GenericApplicationContext:581 - Refreshing org.springframework.context.support.GenericApplicationContext@6fd02e5: startup date [Sun Oct 22 18:22:02 CEST 2017]; root of context hierarchy
+2017-10-22 18:22:03 WARN  BoneCPConfig:618 - releaseHelperThreads has been deprecated -- it tends to slow down your application more.
+2017-10-22 18:22:03 INFO  LocalContainerEntityManagerFactoryBean:334 - Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-10-22 18:22:03 INFO  LogHelper:46 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-10-22 18:22:03 INFO  Version:54 - HHH000412: Hibernate Core {4.3.10.Final}
+2017-10-22 18:22:03 INFO  Environment:224 - HHH000205: Loaded properties from resource hibernate.properties: {hibernate.bytecode.use_reflection_optimizer=false, hibernate.hbm2ddl.import_files=import.sql, hibernate.format_sql=false, hibernate.hbm2ddl.auto=create-drop}
+2017-10-22 18:22:03 INFO  Environment:346 - HHH000021: Bytecode provider name : javassist
+2017-10-22 18:22:03 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-10-22 18:22:03 INFO  Dialect:145 - HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+2017-10-22 18:22:03 INFO  ASTQueryTranslatorFactory:47 - HHH000397: Using ASTQueryTranslatorFactory
+2017-10-22 18:22:04 INFO  SchemaExport:344 - HHH000227: Running hbm2ddl schema export
+2017-10-22 18:22:04 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table TA_GROUPS_AUTHORIZATIONS drop constraint FK_hhxac6hejftnop6lnpx5r52pb
+2017-10-22 18:22:04 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.TA_GROUPS_AUTHORIZATIONS
+2017-10-22 18:22:04 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table TA_GROUPS_AUTHORIZATIONS drop constraint FK_p42m1nf5tj4dyf7ykhtemg50f
+2017-10-22 18:22:04 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.TA_GROUPS_AUTHORIZATIONS
+2017-10-22 18:22:04 ERROR SchemaExport:426 - HHH000389: Unsuccessful: alter table TA_USERS drop constraint FK_521wxhf2b1y3h8vk1iibr89a4
+2017-10-22 18:22:04 ERROR SchemaExport:427 - user lacks privilege or object not found: PUBLIC.TA_USERS
+2017-10-22 18:22:04 INFO  SchemaExport:406 - HHH000230: Schema export complete
+2017-10-22 18:22:04 INFO  GlobalSettings:113 - Trying to find Dozer configuration file: dozer.properties
+2017-10-22 18:22:04 WARN  GlobalSettings:118 - Dozer configuration file not found: dozer.properties.  Using defaults for all Dozer global properties.
+2017-10-22 18:22:04 INFO  DozerInitializer:75 - Initializing Dozer. Version: 5.5.0, Thread Name: main
+2017-10-22 18:22:04 INFO  JMXPlatformImpl:66 - Dozer JMX MBean [org.dozer.jmx:type=DozerStatisticsController] auto registered with the Platform MBean Server
+2017-10-22 18:22:04 INFO  JMXPlatformImpl:66 - Dozer JMX MBean [org.dozer.jmx:type=DozerAdminController] auto registered with the Platform MBean Server
+2017-10-22 18:22:04 INFO  DozerBeanMapper:175 - Initializing a new instance of dozer bean mapper.
+2017-10-22 18:22:04 INFO  DozerBeanMapper:222 - Using the following xml files to load custom mappings for the bean mapper instance: [dozer/dozer-business-mapping.xml]
+2017-10-22 18:22:04 INFO  DozerBeanMapper:224 - Trying to find xml mapping file: dozer/dozer-business-mapping.xml
+2017-10-22 18:22:04 INFO  DozerBeanMapper:226 - Using URL [file:/D:/Users/Meidi/Git/sop-parent/sop-auth/sop-auth-business/target/classes/dozer/dozer-business-mapping.xml] to load custom xml mappings
+2017-10-22 18:22:04 INFO  DozerBeanMapper:228 - Successfully loaded custom xml mappings from URL: [file:/D:/Users/Meidi/Git/sop-parent/sop-auth/sop-auth-business/target/classes/dozer/dozer-business-mapping.xml]
+2017-10-22 18:22:04 INFO  GenericApplicationContext:982 - Closing org.springframework.context.support.GenericApplicationContext@6fd02e5: startup date [Sun Oct 22 18:22:02 CEST 2017]; root of context hierarchy
+2017-10-22 18:22:04 INFO  LocalContainerEntityManagerFactoryBean:462 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2017-10-22 18:22:04 INFO  SchemaExport:344 - HHH000227: Running hbm2ddl schema export
+2017-10-22 18:22:04 INFO  SchemaExport:406 - HHH000230: Schema export complete
+2017-10-22 18:22:04 INFO  BoneCP:159 - Shutting down connection pool...
+2017-10-22 18:22:04 INFO  BoneCP:188 - Connection pool has been shutdown.

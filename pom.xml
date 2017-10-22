@@ -36,6 +36,7 @@
 		<jstl.version>1.2</jstl.version>
 		<hdiv.version>2.1.12</hdiv.version>
 		<swagger.version>2.2.2</swagger.version>
+		<javax.mail.version>1.4.7</javax.mail.version>
 		<maven.compiler.plugin.version>3.3</maven.compiler.plugin.version>
 	</properties>
 
@@ -265,6 +266,12 @@
 				<groupId>io.springfox</groupId>
 				<artifactId>springfox-swagger-ui</artifactId>
 				<version>${swagger.version}</version>
+			</dependency>
+			<!-- MAIL -->
+			<dependency>
+				<groupId>javax.mail</groupId>
+				<artifactId>mail</artifactId>
+				<version>${javax.mail.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
