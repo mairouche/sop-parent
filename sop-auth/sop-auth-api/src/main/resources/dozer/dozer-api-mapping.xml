@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://dozer.sourceforge.net
+http://dozer.sourceforge.net/schema/beanmapping.xsd">
+
+	<!-- Role -->
+	<mapping>
+		<class-a>fr.spiritofphoenix.sop.auth.api.vo.UserVO</class-a>
+		<class-b>fr.spiritofphoenix.sop.auth.business.bo.UserBO</class-b>
+	</mapping>
+	
+</mappings>

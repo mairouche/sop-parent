@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://dozer.sourceforge.net
+http://dozer.sourceforge.net/schema/beanmapping.xsd">
+
+	<!-- User -->
+	<mapping>
+		<class-a>fr.spiritofphoenix.sop.auth.business.bo.UserBO</class-a>
+		<class-b>fr.spiritofphoenix.sop.auth.persistence.entity.User</class-b>
+		<field>
+			<a>groupId</a>
+			<b>group.id</b>
+		</field>
+		<field>
+			<a>groupName</a>
+			<b>group.name</b>
+		</field>
+	</mapping>
+	
+	<!-- Role -->
+	<mapping>
+		<class-a>fr.spiritofphoenix.sop.auth.business.bo.RoleBO</class-a>
+		<class-b>fr.spiritofphoenix.sop.auth.persistence.entity.Role</class-b>
+	</mapping>
+	
+	<!-- Group -->
+	<mapping>
+		<class-a>fr.spiritofphoenix.sop.auth.business.bo.GroupBO</class-a>
+		<class-b>fr.spiritofphoenix.sop.auth.persistence.entity.Group</class-b>
+	</mapping>
+	
+	<!-- Group Authorization -->
+	<mapping>
+		<class-a>fr.spiritofphoenix.sop.auth.business.bo.GroupAuthorizationBO</class-a>
+		<class-b>fr.spiritofphoenix.sop.auth.persistence.entity.GroupAuthorization</class-b>
+		<field>
+			<a>groupId</a>
+			<b>group.id</b>
+		</field>
+		<field>
+			<a>groupName</a>
+			<b>group.name</b>
+		</field>
+		<field>
+			<a>roleId</a>
+			<b>role.id</b>
+		</field>
+		<field>
+			<a>roleName</a>
+			<b>role.name</b>
+		</field>
+	</mapping>
+
+</mappings>
