@@ -10,14 +10,17 @@
            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
 	<context:annotation-config />
-	<context:component-scan base-package="fr.spiritofphoenix.sop.auth.api" />
+	<context:component-scan base-package="fr.spiritofphoenix.sop.auth" />
 	<tx:annotation-driven transaction-manager="transactionManager" />
+	
+	<bean class="fr.spiritofphoenix.sop.auth.api.config.SwaggerConfig"/> 
 
 	<!-- BoneCP configuration -->
 	<bean id="dataSource" class="com.jolbox.bonecp.BoneCPDataSource"
 		destroy-method="close">
 		<property name="driverClass" value="com.mysql.jdbc.Driver" />
-		<property name="jdbcUrl" value="jdbc:mysql://127.0.0.1:3306/sop_authenticator" />
+		<property name="jdbcUrl"
+			value="jdbc:mysql://127.0.0.1:3306/sop_authenticator" />
 		<property name="username" value="sop" />
 		<property name="password" value="sop" />
 		<property name="idleConnectionTestPeriodInMinutes" value="60" />

@@ -1,13 +1,14 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>fr.spiritofphoenix</groupId>
-  <artifactId>sop-parent</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>pom</packaging>
-  <name>SOP :: PARENT</name>
-  <description>Spirit of Phoénix : site web</description>
-  
-  <properties>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>fr.spiritofphoenix</groupId>
+	<artifactId>sop-parent</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>SOP :: PARENT</name>
+	<description>Spirit of Phoénix : site web</description>
+
+	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring.data.version>1.8.2.RELEASE</spring.data.version>
 		<junit.version>4.12</junit.version>
@@ -34,7 +35,7 @@
 		<dozer.version>5.5.1</dozer.version>
 		<jstl.version>1.2</jstl.version>
 		<hdiv.version>2.1.12</hdiv.version>
-		<tiles.version>3.0.7</tiles.version>
+		<swagger.version>2.2.2</swagger.version>
 		<maven.compiler.plugin.version>3.3</maven.compiler.plugin.version>
 	</properties>
 
@@ -254,37 +255,21 @@
 				<artifactId>hdiv-spring-mvc</artifactId>
 				<version>${hdiv.version}</version>
 			</dependency>
-			<!-- TILES -->
+			<!-- SWAGGER -->
 			<dependency>
-				<groupId>org.apache.tiles</groupId>
-				<artifactId>tiles-api</artifactId>
-				<version>${tiles.version}</version>
+				<groupId>io.springfox</groupId>
+				<artifactId>springfox-swagger2</artifactId>
+				<version>${swagger.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>org.apache.tiles</groupId>
-				<artifactId>tiles-core</artifactId>
-				<version>${tiles.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.apache.tiles</groupId>
-				<artifactId>tiles-jsp</artifactId>
-				<version>${tiles.version}</version>
-			</dependency>
-			<!-- PROJECT DEPENDENCIES -->
-			<dependency>
-				<groupId>${project.groupId}</groupId>
-				<artifactId>authenticator-business</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>${project.groupId}</groupId>
-				<artifactId>argonot-commons</artifactId>
-				<version>${argonot.commons.version}</version>
+				<groupId>io.springfox</groupId>
+				<artifactId>springfox-swagger-ui</artifactId>
+				<version>${swagger.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-  
-  <modules>
-  	<module>sop-auth</module>
-  </modules>
+
+	<modules>
+		<module>sop-auth</module>
+	</modules>
 </project>
