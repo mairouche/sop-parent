@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import fr.spiritofphoenix.sop.auth.business.bo.UserBO;
 import fr.spiritofphoenix.sop.auth.business.service.RegistrationService;
-import fr.spiritofphoenix.sop.auth.business.util.TokenUtils;
+import fr.spiritofphoenix.sop.auth.commons.util.TokenUtils;
 import fr.spiritofphoenix.sop.auth.persistence.entity.User;
 import fr.spiritofphoenix.sop.auth.persistence.repository.UserRepository;
 
@@ -23,10 +23,13 @@ public class RegistrationServiceImpl implements RegistrationService {
 	
 	@Autowired
 	private UserRepository userRepository;
+	
+	@Autowired
+	private TokenUtils tokenUtils;
 
 	@Override
 	public UserBO registerUser(UserBO user) {
-		user.setToken(TokenUtils.generateToken());
+		user.setToken(tokenUtils.createJWT(Long.toString(user.getId()), user.getEmail(), "auth", 1800000));
 		return mapper.map(userRepository.save(mapper.map(user, User.class)), UserBO.class);
 	}
 

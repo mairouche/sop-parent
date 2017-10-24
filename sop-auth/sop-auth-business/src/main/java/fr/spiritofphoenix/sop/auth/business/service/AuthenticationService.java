@@ -15,7 +15,7 @@ public interface AuthenticationService {
 	 * @param password
 	 * @return
 	 */
-	UserBO signIn(String email, String password);
+	UserBO authenticate(String email, String password);
 	
 	/**
 	 * User sign-out

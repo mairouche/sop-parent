@@ -22,6 +22,11 @@
 				<artifactId>sop-auth-business</artifactId>
 				<version>${project.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>${project.groupId}</groupId>
+				<artifactId>sop-auth-commons</artifactId>
+				<version>${project.version}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -29,5 +34,6 @@
 		<module>sop-auth-persistence</module>
 		<module>sop-auth-business</module>
 		<module>sop-auth-api</module>
+		<module>sop-auth-commons</module>
 	</modules>
 </project>

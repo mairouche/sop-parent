@@ -23,6 +23,11 @@ public class CredentialForm implements Serializable {
 	 * User given password
 	 */
 	private String password;
+	
+	/**
+	 * User token if it's not the first authentication
+	 */
+	private String token;
 
 	/**
 	 * @return the email
@@ -50,6 +55,20 @@ public class CredentialForm implements Serializable {
 	 */
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	/**
+	 * @return the token
+	 */
+	public String getToken() {
+		return token;
+	}
+
+	/**
+	 * @param token the token to set
+	 */
+	public void setToken(String token) {
+		this.token = token;
 	}
 	
 }

@@ -16,7 +16,7 @@ public class AuthenticationServiceTest extends AbstractBusinessTest {
 
 	@Test
 	public void testSignIn() {
-		UserBO user = authenticationService.signIn("testUserEmail@sop.fr", "testPassword");
+		UserBO user = authenticationService.authenticate("testUserEmail@sop.fr", "testPassword");
 		assertTrue(user != null && !user.getToken().equals("token1"));
 	}
 	

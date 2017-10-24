@@ -34,16 +34,16 @@ public class AuthenticationController {
 	private AuthenticationService authenticationService;
 
 	/**
-	 * Try to authenticate a sign in user giving credentials
+	 * Try to authenticate a user giving credentials
 	 * @param credentials
 	 * @return
 	 */
 	@PostMapping(value="/user/signin")
 	@ApiOperation(value = "Sign in User", notes = "Signin a user by email/password generating a token")
-	public ResponseEntity<?> signInUser(
+	public ResponseEntity<?> authenticateUser(
 			@ApiParam(value = "User's authentication information", required = true) 
 			@RequestBody CredentialForm credentials) {
-		UserBO user = authenticationService.signIn(credentials.getEmail(), credentials.getPassword());
+		UserBO user = authenticationService.authenticate(credentials.getEmail(), credentials.getPassword());
 		if(user != null && authenticationService.isAuthenticated(user.getId(), user.getToken())) {
 			return new ResponseEntity<UserVO>(mapper.map(user, UserVO.class), HttpStatus.OK);
 		}

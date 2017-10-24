@@ -37,6 +37,7 @@
 		<hdiv.version>2.1.12</hdiv.version>
 		<swagger.version>2.2.2</swagger.version>
 		<javax.mail.version>1.4.7</javax.mail.version>
+		<jjwt.version>0.6.0</jjwt.version>
 		<maven.compiler.plugin.version>3.3</maven.compiler.plugin.version>
 	</properties>
 
@@ -255,6 +256,11 @@
 				<groupId>org.hdiv</groupId>
 				<artifactId>hdiv-spring-mvc</artifactId>
 				<version>${hdiv.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>io.jsonwebtoken</groupId>
+				<artifactId>jjwt</artifactId>
+				<version>${jjwt.version}</version>
 			</dependency>
 			<!-- SWAGGER -->
 			<dependency>

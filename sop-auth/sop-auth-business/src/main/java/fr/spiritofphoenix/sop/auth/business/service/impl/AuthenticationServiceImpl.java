@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import fr.spiritofphoenix.sop.auth.business.bo.UserBO;
 import fr.spiritofphoenix.sop.auth.business.service.AuthenticationService;
-import fr.spiritofphoenix.sop.auth.business.util.TokenUtils;
+import fr.spiritofphoenix.sop.auth.commons.util.TokenUtils;
 import fr.spiritofphoenix.sop.auth.persistence.entity.User;
 import fr.spiritofphoenix.sop.auth.persistence.repository.UserRepository;
 
@@ -25,13 +25,16 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 	
 	@Autowired
 	private UserRepository userRepository;
+	
+	@Autowired
+	private TokenUtils tokenUtils;
 
 	@Override
 	@Transactional(propagation=Propagation.REQUIRED, rollbackFor=Exception.class)
-	public UserBO signIn(String email, String password) {
+	public UserBO authenticate(String email, String password) {
 		User user = userRepository.findByEmail(email);
 		if(isUserAuthenticable(password, user)) {
-			user.setToken(TokenUtils.generateToken());
+			user.setToken(tokenUtils.createJWT(Long.toString(user.getId()), user.getEmail(), "auth", 1800000));
 			userRepository.save(user);
 			return mapper.map(user, UserBO.class);
 		}
@@ -58,7 +61,8 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 
 	@Override
 	public boolean isAuthenticated(long userId, String token) {
-		return userRepository.findOne(userId).getToken().equals(token);
+		String userToken = userRepository.findOne(userId).getToken();
+		return userToken.equals(token) && !tokenUtils.jwtIsExpired(userRepository.findOne(userId).getToken());
 	}
 	
 	@Override
