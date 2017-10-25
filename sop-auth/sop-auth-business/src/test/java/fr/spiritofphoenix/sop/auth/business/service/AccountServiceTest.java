@@ -31,7 +31,7 @@ public class AccountServiceTest extends AbstractBusinessTest {
 		user.setActive(true);
 		user.setGroupId(1);
 		user.setPassword("testUpdate");
-		user.setToken("aaa");
+		user.setAccessToken("aaa");
 		assertEquals(accountService.modifyUserInformation(user).getEmail(), "test");
 	}
 

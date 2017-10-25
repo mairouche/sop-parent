@@ -76,9 +76,9 @@ public class UserBO implements Serializable {
 	private String groupName;
 	
 	/**
-	 * User token
+	 * User access token
 	 */
-	private String token;
+	private String accessToken;
 
 	/**
 	 * @return the id
@@ -249,17 +249,17 @@ public class UserBO implements Serializable {
 	}
 
 	/**
-	 * @return the token
+	 * @return the accessToken
 	 */
-	public String getToken() {
-		return token;
+	public String getAccessToken() {
+		return accessToken;
 	}
 
 	/**
-	 * @param token the token to set
+	 * @param accessToken the accessToken to set
 	 */
-	public void setToken(String token) {
-		this.token = token;
+	public void setAccessToken(String accessToken) {
+		this.accessToken = accessToken;
 	}
 	
 }

@@ -44,7 +44,7 @@ public class AuthenticationController {
 			@ApiParam(value = "User's authentication information", required = true) 
 			@RequestBody CredentialForm credentials) {
 		UserBO user = authenticationService.authenticate(credentials.getEmail(), credentials.getPassword());
-		if(user != null && authenticationService.isAuthenticated(user.getId(), user.getToken())) {
+		if(user != null && authenticationService.isAuthenticated(user.getId(), user.getAccessToken())) {
 			return new ResponseEntity<UserVO>(mapper.map(user, UserVO.class), HttpStatus.OK);
 		}
 		return new ResponseEntity<String>("Authentication failure", HttpStatus.FORBIDDEN);

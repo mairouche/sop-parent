@@ -29,7 +29,7 @@ public class RegistrationServiceImpl implements RegistrationService {
 
 	@Override
 	public UserBO registerUser(UserBO user) {
-		user.setToken(tokenUtils.createJWT(Long.toString(user.getId()), user.getEmail(), "auth", 1800000));
+		user.setAccessToken(tokenUtils.createJWT(Long.toString(user.getId()), user.getEmail(), "auth", 1800000));
 		return mapper.map(userRepository.save(mapper.map(user, User.class)), UserBO.class);
 	}
 

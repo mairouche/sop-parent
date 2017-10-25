@@ -17,12 +17,12 @@ public class AuthenticationServiceTest extends AbstractBusinessTest {
 	@Test
 	public void testSignIn() {
 		UserBO user = authenticationService.authenticate("testUserEmail@sop.fr", "testPassword");
-		assertTrue(user != null && !user.getToken().equals("token1"));
+		assertTrue(user != null && !user.getAccessToken().equals("token1"));
 	}
 	
 	@Test
 	public void testSignOut() {
-		assertTrue(authenticationService.signOut(1L).getToken().equals(""));
+		assertTrue(authenticationService.signOut(1L).getAccessToken().equals(""));
 	}
 	
 	@Test

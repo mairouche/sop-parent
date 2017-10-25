@@ -34,7 +34,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 	public UserBO authenticate(String email, String password) {
 		User user = userRepository.findByEmail(email);
 		if(isUserAuthenticable(password, user)) {
-			user.setToken(tokenUtils.createJWT(Long.toString(user.getId()), user.getEmail(), "auth", 1800000));
+			user.setAccessToken(tokenUtils.createJWT(Long.toString(user.getId()), user.getEmail(), "auth", 1800000));
 			userRepository.save(user);
 			return mapper.map(user, UserBO.class);
 		}
@@ -45,7 +45,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 	@Transactional(propagation=Propagation.REQUIRED, rollbackFor=Exception.class)
 	public UserBO signOut(long userId) {
 		User user = userRepository.findOne(userId);
-		user.setToken("");
+		user.setAccessToken("");
 		return mapper.map(userRepository.save(user), UserBO.class);
 	}
 
@@ -61,8 +61,8 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 
 	@Override
 	public boolean isAuthenticated(long userId, String token) {
-		String userToken = userRepository.findOne(userId).getToken();
-		return userToken.equals(token) && !tokenUtils.jwtIsExpired(userRepository.findOne(userId).getToken());
+		String userToken = userRepository.findOne(userId).getAccessToken();
+		return userToken.equals(token) && !tokenUtils.jwtIsExpired(userRepository.findOne(userId).getAccessToken());
 	}
 	
 	@Override
