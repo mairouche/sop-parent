@@ -28,14 +28,6 @@
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 	<filter>
-		<filter-name>cors</filter-name>
-		<filter-class>fr.spiritofphoenix.sop.auth.api.filter.CORSFilter</filter-class>
-	</filter>
-	<filter-mapping>
-		<filter-name>cors</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping>
-	<filter>
 		<filter-name>CharacterEncodingFilter</filter-name>
 		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
 		<init-param>
